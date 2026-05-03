@@ -18,9 +18,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Electron desktop app for creating and editing TTRPG character sheets.",
   "dependencies": {
-    "electron": "^41.5.0",
     "mathjs": "^15.2.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
@@ -29,6 +28,7 @@
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "electron": "^41.5.0",
     "electron-builder": "^26.8.1",
     "electron-icon-maker": "^0.0.5",
     "electron-rebuild": "^3.2.9",
@@ -53,15 +53,15 @@
       "data/**/*"
     ],
     "mac": {
-      "icon": "assets/icon.icns",
+      "icon": "assets/icons/mac/icon.icns",
       "target": ["dmg", "zip"]
     },
     "win": {
-      "icon": "assets/icon.ico",
+      "icon": "assets/icons/win/icon.ico",
       "target": ["nsis"]
     },
     "linux": {
-      "icon": "assets/icon.png",
+      "icon": "assets/icons/png",
       "target": ["AppImage"]
     }
   }
