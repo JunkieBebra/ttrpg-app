@@ -1,6 +1,6 @@
 {
   "name": "ttrpg-app",
-  "productName": "CHEBURATOR v1",
+  "productName": "Smart Charsheet",
   "version": "1.0.0",
   "main": "dist/main/main.js",
   "scripts": {
@@ -9,7 +9,11 @@
     "build:renderer": "webpack",
     "build": "rm -rf dist && npm run build:main && npm run build:engine && npm run build:renderer",
     "start": "npm run build && npx electron dist/main/main.js",
-    "dist": "npm run build && electron-builder"
+    "dist": "npm run build && electron-builder",
+    "package:mac":    "npm run build && electron-builder --mac",
+    "package:win":    "npm run build && electron-builder --win",
+    "package:linux":  "npm run build && electron-builder --linux",
+    "package:all":    "npm run build && electron-builder --mac --win --linux"
   },
   "keywords": [],
   "author": "",
@@ -35,22 +39,26 @@
     "webpack-cli": "^7.0.2"
   },
   "build": {
-    "appId": "com.smartcharsheet.app",
-    "productName": "Smart charsheet",
+    "appId": "com.yourname.smartcharsheet",
+    "productName": "Smart Charsheet",
+    "directories": {
+      "output": "release"
+    },
     "files": [
       "dist/**/*",
       "assets/**/*",
-      "package.json"
+      "data/**/*"
     ],
     "mac": {
-      "icon": "assets/icons/mac/icon.icns"
+      "icon": "assets/icon.icns",
+      "target": ["dmg", "zip"]
     },
     "win": {
-      "icon": "assets/icons/win/icon.ico",
-      "target": ["nsis", "portable"]
+      "icon": "assets/icon.ico",
+      "target": ["nsis"]
     },
     "linux": {
-      "icon": "assets/icons/png",
+      "icon": "assets/icon.png",
       "target": ["AppImage"]
     }
   }
