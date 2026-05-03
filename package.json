@@ -39,8 +39,11 @@
     "webpack-cli": "^7.0.2"
   },
   "build": {
-    "appId": "com.yourname.smartcharsheet",
+    "appId": "com.junkiebebra.smartcharsheet",
     "productName": "Smart Charsheet",
+    "publish": {
+      "provider": "github"
+    },
     "directories": {
       "output": "release"
     },

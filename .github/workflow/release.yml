@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - "v*"   # triggers on tags like v1.0.0
+      - "v*"
 
 jobs:
   build:
@@ -25,12 +25,11 @@ jobs:
         run: npm install
 
       - name: Build and package
-        run: npm run package:all
+        run: npm run build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: release-${{ matrix.os }}
-          path: release/
+      - name: Package
+        run: npx electron-builder --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
