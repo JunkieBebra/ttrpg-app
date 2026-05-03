@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart charsheet</title>
+    <style>
+      html,
+      body,
+      #root {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background: #11151d;
+        scrollbar-color: #374151 #151a24;
+        scrollbar-width: thin;
+      }
+
+      * {
+        scrollbar-color: #374151 #151a24;
+        scrollbar-width: thin;
+      }
+
+      *::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: #151a24;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background: #374151;
+        border: 2px solid #151a24;
+        border-radius: 999px;
+      }
+
+      *::-webkit-scrollbar-thumb:hover {
+        background: #4b93ff;
+      }
+
+      *::-webkit-scrollbar-corner {
+        background: #151a24;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
